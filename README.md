@@ -1,4 +1,4 @@
-# Social Media Analysis System — Live V6
+# Social Media Analysis System 
 
 A live, four-platform social-media analytics dashboard for Instagram, X/Twitter, LinkedIn and YouTube.
 
@@ -6,7 +6,7 @@ A live, four-platform social-media analytics dashboard for Instagram, X/Twitter,
 
 - **No demo data is bundled.** Platform pages fetch fresh data when you press **Fetch Live Data**.
 - **No duplicated platform heading.** The global header is now the single page title for Instagram, X, LinkedIn and YouTube.
-- **Instagram followers/views mapping is broader.** The normalizer now handles common fields such as `followersCount`, `followerCount`, `likesCount`, `commentsCount`, `viewCount`, `videoViewCount`, `playsCount`, `impressions`, and nested owner/author metrics.
+- **Instagram followers/views mapping is broader.** The normalizer now handles common fields such as followersCount, followerCount, likesCount, commentsCount, viewCount, videoViewCount, playsCount, impressions, and nested owner/author metrics.
 - **Follower aggregation is correct.** Repeated profile counts on individual posts are deduplicated by creator/platform instead of letting the last row overwrite a real count.
 - **LinkedIn is upgraded to a profile + posts workflow by default.** Profile data supplies follower/audience information while a no-cookie LinkedIn posts Actor supplies post text and engagement metrics.
 - **Profile-only LinkedIn results remain usable.** If an Actor returns a profile but no post records, the dashboard still shows the profile audience without pretending the profile row is a content post.
@@ -14,7 +14,7 @@ A live, four-platform social-media analytics dashboard for Instagram, X/Twitter,
 
 ## Recommended LinkedIn configuration
 
-The default `.env.example` uses:
+The default .env.example uses:
 
 ```text
 LINKEDIN_PROFILE_ACTOR_ID=harvestapi/linkedin-profile-scraper
