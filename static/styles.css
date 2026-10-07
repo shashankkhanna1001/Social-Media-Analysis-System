@@ -1,0 +1,1378 @@
+/* ============================================================
+   ROOT VARIABLES & GLOBAL SETTINGS
+   ============================================================ */
+
+:root {
+    --bg: #070a12;
+    --panel: #101521;
+    --panel2: #0d1320;
+    --border: #212a3b;
+    --text: #f5f7ff;
+    --muted: #8490a7;
+    --purple: #7855ff;
+    --purple2: #9b7aff;
+    --green: #40d99e;
+    --yellow: #f2b94b;
+    --red: #ff5870;
+    --blue: #4aa1ff;
+    --shadow: 0 18px 50px rgba(0, 0, 0, 0.26);
+
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        sans-serif;
+}
+
+
+/* ============================================================
+   GLOBAL RESET
+   ============================================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(
+            circle at 80% -10%,
+            rgba(113, 76, 255, 0.14),
+            transparent 30%
+        ),
+        var(--bg);
+    color: var(--text);
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+
+/* ============================================================
+   APPLICATION LAYOUT
+   ============================================================ */
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
+
+.sidebar {
+    width: 230px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    background: rgba(8, 11, 19, 0.98);
+    border-right: 1px solid var(--border);
+
+    padding: 22px 14px;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 10;
+}
+
+
+/* ============================================================
+   BRAND
+   ============================================================ */
+
+.brand {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 0 9px 28px;
+}
+
+.brand-mark {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 12px;
+
+    display: grid;
+    place-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #6240ff,
+        #9c73ff
+    );
+
+    font-weight: 900;
+
+    box-shadow:
+        0 12px 26px rgba(112, 76, 255, 0.3);
+}
+
+.brand strong {
+    display: block;
+    font-size: 15px;
+}
+
+.brand small {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+
+/* ============================================================
+   SIDEBAR LABELS
+   ============================================================ */
+
+.label {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: #667187;
+    font-weight: 800;
+    padding: 15px 10px 7px;
+}
+
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+
+.nav {
+    border: 0;
+    background: none;
+    color: #9fa9ba;
+
+    text-align: left;
+
+    border-radius: 10px;
+
+    height: 42px;
+    padding: 0 12px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    cursor: pointer;
+}
+
+.nav:hover {
+    background: #151b2a;
+    color: #fff;
+}
+
+.nav.active {
+    background: #171e2c;
+    color: #fff;
+
+    box-shadow:
+        inset 3px 0 var(--purple);
+}
+
+.nav span {
+    font-size: 11px;
+}
+
+
+/* ============================================================
+   SIDEBAR BOTTOM
+   ============================================================ */
+
+.side-bottom {
+    margin-top: auto;
+    padding: 16px 8px 4px;
+
+    border-top: 1px solid var(--border);
+
+    font-size: 10px;
+    color: #637089;
+}
+
+.dot {
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    box-shadow:
+        0 0 10px rgba(64, 217, 158, 0.65);
+
+    margin-right: 7px;
+}
+
+
+/* ============================================================
+   TOP BAR
+   ============================================================ */
+
+.topbar {
+    height: 86px;
+
+    border-bottom:
+        1px solid rgba(33, 42, 59, 0.75);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main,
+main {
+    margin-left: 230px;
+
+    width: calc(100% - 230px);
+
+    padding: 0 34px 42px;
+
+    max-width: 1650px;
+}
+
+
+/* ============================================================
+   HEADER TYPOGRAPHY
+   ============================================================ */
+
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #4c8fff;
+    font-weight: 800;
+}
+
+.topbar h1 {
+    margin: 5px 0 3px;
+
+    font-size: 26px;
+
+    letter-spacing: -0.8px;
+}
+
+.topbar p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+/* ============================================================
+   HEADER ACTIONS
+   ============================================================ */
+
+.head-actions {
+    display: flex;
+    gap: 10px;
+}
+
+
+/* ============================================================
+   BUTTONS & FORM ELEMENTS
+   ============================================================ */
+
+.ghost,
+.primary,
+select,
+input {
+    border-radius: 10px;
+}
+
+.ghost {
+    padding: 10px 14px;
+
+    background: #111824;
+
+    border: 1px solid var(--border);
+
+    color: #dce1ea;
+
+    cursor: pointer;
+}
+
+.primary {
+    padding: 10px 15px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #6947ef,
+            #875cff
+        );
+
+    color: #fff;
+
+    border: 0;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(115, 78, 242, 0.22);
+}
+
+
+/* ============================================================
+   PAGE VISIBILITY
+   ============================================================ */
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+
+.hero {
+    margin-top: 20px;
+
+    min-height: 178px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111827,
+            #131932
+        );
+
+    padding: 35px 36px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.hero.compact {
+    min-height: 135px;
+}
+
+.hero-glow {
+    position: absolute;
+
+    right: -120px;
+    top: -145px;
+
+    width: 430px;
+    height: 430px;
+
+    border: 1px solid rgba(142, 115, 255, 0.22);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 100px rgba(104, 74, 255, 0.08);
+}
+
+
+/* ============================================================
+   HERO CHIP
+   ============================================================ */
+
+.chip {
+    display: inline-block;
+
+    border: 1px solid rgba(126, 91, 255, 0.35);
+
+    background:
+        rgba(90, 62, 215, 0.08);
+
+    border-radius: 999px;
+
+    padding: 6px 10px;
+
+    color: #a694ff;
+
+    font-size: 9px;
+
+    letter-spacing: 1.3px;
+
+    font-weight: 800;
+}
+
+
+/* ============================================================
+   HERO & PLATFORM HEADINGS
+   ============================================================ */
+
+.hero h2,
+.platform-head h2 {
+    font-size: 31px;
+
+    line-height: 1.05;
+
+    letter-spacing: -1.1px;
+
+    margin: 16px 0 9px;
+}
+
+.hero p,
+.platform-head p {
+    margin: 0;
+
+    color: #7f8aa0;
+
+    font-size: 12px;
+
+    max-width: 760px;
+}
+
+
+/* ============================================================
+   KPI CARDS
+   ============================================================ */
+
+.kpis {
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 11px;
+
+    margin: 18px 0;
+}
+
+.kpi {
+    padding: 16px;
+
+    min-height: 105px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111824,
+            #0e1420
+        );
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.kpi small {
+    display: block;
+
+    color: #7b879c;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.8px;
+}
+
+.kpi b {
+    display: block;
+
+    font-size: 23px;
+
+    margin: 9px 0 4px;
+}
+
+.kpi span {
+    font-size: 8px;
+
+    color: #657087;
+}
+
+
+/* ============================================================
+   GRID LAYOUT
+   ============================================================ */
+
+.grid2 {
+    display: grid;
+
+    grid-template-columns:
+        1.08fr 0.92fr;
+
+    gap: 13px;
+
+    margin-bottom: 13px;
+}
+
+
+/* ============================================================
+   GENERAL CARD
+   ============================================================ */
+
+.card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17, 23, 36, 0.98),
+            rgba(13, 18, 29, 0.98)
+        );
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    padding: 17px;
+
+    box-shadow: var(--shadow);
+
+    margin-bottom: 13px;
+}
+
+
+/* ============================================================
+   CARD HEADER
+   ============================================================ */
+
+.card-head {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 14px;
+}
+
+.card-head h3 {
+    margin: 0 0 4px;
+
+    font-size: 13px;
+}
+
+.card-head p {
+    margin: 0;
+
+    color: #6e798f;
+
+    font-size: 9px;
+}
+
+.card-head select,
+.analyzer select {
+    background: #0b1019;
+
+    border: 1px solid #293349;
+
+    color: #dfe5ef;
+
+    padding: 8px 10px;
+
+    outline: 0;
+}
+
+
+/* ============================================================
+   TAGS
+   ============================================================ */
+
+.tag {
+    font-size: 8px;
+
+    color: #9c8cff;
+
+    border: 1px solid #44357e;
+
+    border-radius: 999px;
+
+    padding: 5px 8px;
+}
+
+
+/* ============================================================
+   BAR CHARTS
+   ============================================================ */
+
+.bars {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 17px;
+
+    padding: 6px 0 8px;
+}
+
+.barrow {
+    display: grid;
+
+    grid-template-columns:
+        90px 1fr 72px;
+
+    gap: 12px;
+
+    align-items: center;
+}
+
+.bar-label {
+    color: #aab2c0;
+
+    font-size: 10px;
+}
+
+.track {
+    height: 10px;
+
+    border-radius: 999px;
+
+    background: #151c29;
+
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #6240f5,
+            #9a73ff
+        );
+
+    border-radius: 999px;
+}
+
+.barval {
+    text-align: right;
+
+    color: #dfe4ed;
+
+    font-size: 10px;
+}
+
+
+/* ============================================================
+   SENTIMENT CARD
+   ============================================================ */
+
+.sent-card {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 35px;
+
+    min-height: 185px;
+}
+
+
+/* ============================================================
+   SENTIMENT DONUT
+   ============================================================ */
+
+.donut {
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            var(--green) 0 0,
+            var(--yellow) 0 0,
+            var(--red) 0 100%
+        );
+
+    display: grid;
+
+    place-items: center;
+
+    position: relative;
+}
+
+.donut:after {
+    content: "";
+
+    position: absolute;
+
+    width: 103px;
+    height: 103px;
+
+    border-radius: 50%;
+
+    background: #0f1521;
+}
+
+.donut > div {
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+}
+
+.donut b {
+    font-size: 25px;
+
+    display: block;
+}
+
+.donut small {
+    font-size: 9px;
+
+    color: #768198;
+}
+
+
+/* ============================================================
+   SENTIMENT ROWS
+   ============================================================ */
+
+.sent-rows {
+    width: 230px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+.sent-row {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 10px;
+}
+
+.sent-row i {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 3px;
+}
+
+.sent-row b {
+    margin-left: auto;
+}
+
+
+/* ============================================================
+   TABLES
+   ============================================================ */
+
+.table-wrap {
+    overflow: auto;
+}
+
+.table-wrap table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 780px;
+}
+
+.table-wrap th {
+    font-size: 8px;
+
+    color: #68748a;
+
+    text-align: left;
+
+    letter-spacing: 1px;
+
+    padding: 10px;
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+.table-wrap td {
+    padding: 12px 10px;
+
+    border-bottom:
+        1px solid rgba(33, 42, 59, 0.72);
+
+    font-size: 10px;
+
+    color: #d6dbe5;
+}
+
+
+/* ============================================================
+   PILLS
+   ============================================================ */
+
+.pill {
+    display: inline-block;
+
+    padding: 4px 7px;
+
+    border-radius: 999px;
+
+    font-size: 8px;
+}
+
+.positive {
+    background:
+        rgba(64, 217, 158, 0.1);
+
+    color: #8be8bf;
+}
+
+.neutral {
+    background:
+        rgba(242, 185, 75, 0.1);
+
+    color: #f2c96e;
+}
+
+.negative {
+    background:
+        rgba(255, 88, 112, 0.1);
+
+    color: #ff8698;
+}
+
+
+/* ============================================================
+   INFORMATION / NOTE BLOCK
+   ============================================================ */
+
+.note {
+    font-size: 10px;
+
+    color: #68758b;
+
+    margin: 5px 0 16px;
+
+    padding: 13px 15px;
+
+    border-left:
+        2px solid var(--purple);
+
+    background: #0d1320;
+
+    border-radius:
+        0 9px 9px 0;
+}
+
+
+/* ============================================================
+   PLATFORM HEADER
+   ============================================================ */
+
+.platform-head {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 28px 0 17px;
+}
+
+.platform-icon-large {
+    width: 54px;
+    height: 54px;
+
+    border-radius: 16px;
+
+    display: grid;
+
+    place-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6240ff,
+            #8f6bff
+        );
+
+    font-weight: 900;
+
+    font-size: 21px;
+}
+
+
+/* ============================================================
+   ANALYZER
+   ============================================================ */
+
+.analyzer {
+    padding: 0;
+}
+
+.analyzer-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.8fr 110px 150px 185px;
+
+    gap: 12px;
+
+    padding: 16px;
+}
+
+.analyzer label {
+    display: block;
+
+    font-size: 9px;
+
+    color: #8793a8;
+
+    margin-bottom: 6px;
+
+    font-weight: 700;
+}
+
+.analyzer input,
+.filterbar input {
+    width: 100%;
+
+    height: 40px;
+
+    background: #0a1019;
+
+    color: #f4f6fb;
+
+    border: 1px solid #293349;
+
+    padding: 0 11px;
+
+    outline: 0;
+}
+
+.analyzer select {
+    width: 100%;
+
+    height: 40px;
+}
+
+.analyzer .primary {
+    height: 40px;
+
+    align-self: end;
+}
+
+
+/* ============================================================
+   ANALYZER FOOTER
+   ============================================================ */
+
+.analyzer-foot {
+    border-top:
+        1px solid var(--border);
+
+    padding: 10px 16px;
+
+    color: #657087;
+
+    font-size: 9px;
+
+    display: flex;
+
+    justify-content: space-between;
+}
+
+
+/* ============================================================
+   FILTER BAR
+   ============================================================ */
+
+.filterbar {
+    display: grid;
+
+    grid-template-columns:
+        1fr 180px 180px;
+
+    gap: 10px;
+
+    margin: 18px 0 13px;
+}
+
+.filterbar select {
+    background: #0a1019;
+
+    color: #e7ebf3;
+
+    border: 1px solid #293349;
+
+    padding: 0 10px;
+
+    height: 40px;
+}
+
+
+/* ============================================================
+   SAVED ANALYSES
+   ============================================================ */
+
+.saved-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.saved-item {
+    display: grid;
+
+    grid-template-columns:
+        1fr auto;
+
+    gap: 14px;
+
+    align-items: center;
+
+    padding: 15px;
+
+    background: #0d1420;
+
+    border: 1px solid var(--border);
+
+    border-radius: 11px;
+}
+
+.saved-item strong {
+    font-size: 11px;
+}
+
+.saved-item small {
+    display: block;
+
+    color: #69758b;
+
+    font-size: 9px;
+
+    margin-top: 5px;
+}
+
+.saved-actions {
+    display: flex;
+
+    gap: 7px;
+}
+
+
+/* ============================================================
+   SETUP STEPS
+   ============================================================ */
+
+.steps {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.steps div {
+    display: flex;
+
+    gap: 12px;
+
+    align-items: flex-start;
+}
+
+.steps b {
+    color: #a28cff;
+
+    font-size: 10px;
+}
+
+.steps span {
+    font-size: 10px;
+
+    color: #a1abba;
+
+    line-height: 1.5;
+}
+
+
+/* ============================================================
+   WARNING CARD
+   ============================================================ */
+
+.warning {
+    border-color: #4f3a1f;
+
+    background:
+        linear-gradient(
+            145deg,
+            #18140d,
+            #11151c
+        );
+}
+
+.warning p {
+    color: #96907f;
+
+    font-size: 10px;
+
+    line-height: 1.55;
+}
+
+
+/* ============================================================
+   HIDDEN ELEMENTS
+   ============================================================ */
+
+.hidden {
+    display: none;
+}
+
+
+/* ============================================================
+   TOAST NOTIFICATION
+   ============================================================ */
+
+.toast {
+    position: fixed;
+
+    right: 24px;
+    bottom: 24px;
+
+    background: #111927;
+
+    border: 1px solid var(--border);
+
+    color: #e9edf6;
+
+    padding: 12px 15px;
+
+    border-radius: 10px;
+
+    opacity: 0;
+
+    transform: translateY(10px);
+
+    transition: 0.2s;
+
+    pointer-events: none;
+
+    font-size: 10px;
+
+    z-index: 50;
+}
+
+.toast.show {
+    opacity: 1;
+
+    transform: none;
+}
+
+
+/* ============================================================
+   TABLET / MEDIUM SCREEN RESPONSIVENESS
+   ============================================================ */
+
+@media (max-width: 1050px) {
+    .sidebar {
+        width: 205px;
+    }
+
+    .main,
+    main {
+        margin-left: 205px;
+
+        width: calc(100% - 205px);
+
+        padding: 0 20px;
+    }
+
+    .kpis {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .analyzer-grid {
+        grid-template-columns:
+            1fr 100px 140px 170px;
+    }
+}
+
+
+/* ============================================================
+   MOBILE RESPONSIVENESS
+   ============================================================ */
+
+@media (max-width: 780px) {
+    .sidebar {
+        width: 72px;
+    }
+
+    .brand div:not(.brand-mark),
+    .label,
+    .nav span,
+    .side-bottom {
+        display: none;
+    }
+
+    .main,
+    main {
+        margin-left: 72px;
+
+        width: calc(100% - 72px);
+
+        padding: 0 14px;
+    }
+
+    .nav {
+        justify-content: center;
+    }
+
+    .brand {
+        padding-left: 4px;
+    }
+
+    .topbar {
+        height: auto;
+
+        padding: 18px 0;
+
+        gap: 12px;
+
+        align-items: flex-start;
+    }
+
+    .head-actions {
+        flex-shrink: 0;
+    }
+
+    .hero h2,
+    .platform-head h2 {
+        font-size: 25px;
+    }
+
+    .grid2 {
+        grid-template-columns: 1fr;
+    }
+
+    .analyzer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .analyzer .primary {
+        width: 100%;
+    }
+
+    .filterbar {
+        grid-template-columns: 1fr;
+    }
+
+    .sent-card {
+        flex-direction: column;
+
+        gap: 17px;
+    }
+
+    .kpis {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+/* ============================================================
+   FETCH STATUS
+   ============================================================ */
+
+.fetch-status {
+    margin-top: 14px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #30394b;
+
+    border-radius: 12px;
+
+    background: #0c111b;
+
+    color: #b9c4d6;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* ============================================================
+   FETCH STATUS — ERROR
+   ============================================================ */
+
+.fetch-status.error {
+    border-color: #6f3341;
+
+    background: #24131a;
+
+    color: #ffc4ce;
+}
+
+
+/* ============================================================
+   FETCH STATUS — SUCCESS
+   ============================================================ */
+
+.fetch-status.success {
+    border-color: #245f53;
+
+    background: #0e201c;
+
+    color: #a9f1df;
+}
+
+
+/* ============================================================
+   FETCH STATUS — WARNING
+   ============================================================ */
+
+.fetch-status.warn {
+    border-color: #6a5526;
+
+    background: #211a0d;
+
+    color: #f5d79a;
+}
+
+
+/* ============================================================
+   FETCH STATUS HEADING
+   ============================================================ */
+
+.fetch-status strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #fff;
+}
+
+
+/* ============================================================
+   HIDDEN ELEMENTS
+   ============================================================ */
+
+.hidden {
+    display: none !important;
+}
